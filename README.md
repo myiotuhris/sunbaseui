@@ -1,3 +1,6 @@
+Deployed at [https://main--eclectic-speculoos-ac965a.netlify.app/](https://main--eclectic-speculoos-ac965a.netlify.app/)
+Disable web security in browser to run the application to prevent preflight request.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
