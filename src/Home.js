@@ -1,13 +1,9 @@
 import React, {Component, useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios'
-import {Link, useNavigate} from "react-router-dom";
 import {Modal} from "react-bootstrap"
-import {} from "@fortawesome/fontawesome-svg-core"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 const FormModal=(props)=>{
     const customer= props.customer
-    // console.log(props.customer)
     const [state,setState]=useState({
         first_name: customer?.first_name||'',
         last_name: customer?.last_name||'',
@@ -29,7 +25,7 @@ const FormModal=(props)=>{
         e.preventDefault()
         if(customer) props.callFunction(state,customer.uuid)
         else props.callFunction(state)
-        document.getElementById("customerForm").reset()
+        // document.getElementById("customerForm").reset()
     }
     return <Modal show={props.show} onHide={props.toggle}>
         <Modal.Body>
@@ -84,7 +80,7 @@ const FormModal=(props)=>{
                     </div>
                 </div>
                 <div className="mb-3 row">
-                    <label htmlFor="phone" className="col-sm-2 col-form-label">phone</label>
+                    <label htmlFor="phone" className="col-sm-2 col-form-label">Phone</label>
                     <div className="col-sm-10">
                         <input type="text" className="form-control-plaintext" name="phone"
                                value={state.phone} onChange={handleChange}/>
@@ -161,7 +157,7 @@ function Home(){
                 <button className="col float-right btn btn-sm btn-success me-1 m-auto" onClick={(e)=>setShowModal(true)}>Add new customer</button>
             </div>
         </div>
-
+        {/*Add customer modal*/}
         <FormModal show={showModal} callFunction={addAction} toggle={()=>setShowModal(!showModal)}/>
         <table className={"table table-sm"}>
             <thead>
@@ -179,6 +175,7 @@ function Home(){
             </tr>
             </thead>
             <tbody>
+            {/*Update customer details modal*/}
             <FormModal show={showEditModal} key={selected?selected.uuid:-1} customer={selected} callFunction={updateAction} toggle={()=>setShowEditModal(!showEditModal)}/>
             {customers.map((customer,index)=>{
                 // console.log(customers)

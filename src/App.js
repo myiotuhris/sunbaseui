@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+
 import './App.css';
-import {BrowserRouter, Routes, Route, Link, Outlet, Navigate} from "react-router-dom";
+import {BrowserRouter, Routes, Route, Outlet, Navigate} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./Login";
 import Home from "./Home";

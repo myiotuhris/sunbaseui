@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios'
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const Login=()=>{
     const API_URL='https://qa2.sunbasedata.com/sunbase/portal/api/assignment_auth.jsp'
