@@ -17,7 +17,8 @@ const Login=()=>{
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
             }}).then(res=> {
-                localStorage.setItem('token',res.access_token)
+                localStorage.setItem('token',res.data.access_token)
+            // console.log(localStorage.getItem('token'))
             history('/',{ replace: true })
             }).catch(err=>window.alert("Login Failure"))
     }
